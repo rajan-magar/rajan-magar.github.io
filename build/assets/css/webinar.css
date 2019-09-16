@@ -1,0 +1,561 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background-color: #f8f8f8;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 1fr auto;
+  }
+}
+body #bg {
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 98%);
+  background-color: #52ae55;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body #bg {
+    height: calc(100% - 7em);
+  }
+}
+@media only screen and (max-width: 767px) {
+  body header {
+    height: 5em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body header {
+    padding: 2em 14em;
+    grid-column: 1;
+  }
+}
+body header img {
+  max-width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  body header img {
+    max-width: 40%;
+    filter: none;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body header img {
+    max-width: 20%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body main {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+body main section#content {
+  display: flex;
+}
+body main section#content img {
+  box-shadow: 0px 21px 35px rgba(0, 0, 0, 0.3);
+  border-radius: 11px;
+}
+@media only screen and (max-width: 767px) {
+  body main section#content {
+    flex-direction: column;
+    padding: 1em 2em;
+  }
+  body main section#content img {
+    align-self: center;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#content {
+    padding: 2em 14em;
+    justify-content: space-between;
+  }
+  body main section#content img {
+    width: 40%;
+    align-self: flex-start;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#content .content__detail {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body main section#content .content__detail__title {
+    margin-top: 40px;
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#content .content__detail__title {
+    margin-top: 0;
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+  }
+}
+body main section#content .content__detail__para {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  line-height: 150%;
+  text-align: justify;
+}
+body main section#content .content__detail ul li {
+  text-align: justify;
+}
+body main section#content__detail {
+  background-color: #ddefde;
+}
+body main section#content__detail h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+}
+body main section#form {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+body main section#form .card {
+  align-self: center;
+  background-color: #232f3d;
+  width: calc(100% - 30px);
+  height: 180px;
+  margin-bottom: -70px;
+  border-radius: 11px;
+  box-shadow: 0px 11px 30px rgba(0, 0, 0, 0.25);
+  padding: 1.5em 1.5em;
+  z-index: 1;
+}
+body main section#form .card__detail {
+  display: flex;
+  margin-bottom: 0.7em;
+}
+body main section#form .card__detail__webinar {
+  flex-grow: 1;
+}
+body main section#form .card__detail__webinar p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.7em;
+  margin-bottom: 0.7em;
+}
+body main section#form .card__detail__webinar p span {
+  color: red;
+}
+body main section#form .card__detail__webinar--heading {
+  font-weight: bolder;
+  font-size: 1em !important;
+}
+body main section#form .card__detail a img {
+  width: 8em;
+  margin-left: 0.7em;
+}
+body main section#form .card__countdown {
+  height: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section#form .card__countdown p {
+  margin: 0 1.5em;
+  font-size: 0.7em;
+  color: #232f3d;
+}
+@media screen and (max-width: 375px) {
+  body main section#form .card__countdown p {
+    margin: 0 0.7em;
+  }
+}
+body main section#form .card__countdown p span {
+  display: block;
+  font-weight: 700;
+  font-size: 2em;
+}
+body main section#form .hubsport__form {
+  background-color: #ffffff;
+  width: 100%;
+  height: 700px;
+  border-radius: 11px;
+  padding: 5em 2em 0;
+  box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+}
+body main section#form .hubsport__form h1 {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+body main section#form .hubsport__form form fieldset {
+  margin: auto !important;
+}
+body main section#form .hubsport__form form fieldset .hs-form-field label:not(.hs-error-msg) {
+  display: none;
+}
+body main section#form .hubsport__form form fieldset .hs-form-field ul {
+  display: block !important;
+}
+body main section#form .hubsport__form form fieldset .hs-form-field ul li label {
+  color: red !important;
+}
+body main section#form .hubsport__form form fieldset .hs-form-field .input {
+  margin-right: 0;
+}
+body main section#form .hubsport__form form fieldset .hs-form-field .input .hs-input {
+  display: inline-block;
+  font-size: 14px;
+  padding: 2em 1.5em !important;
+  margin: 0 auto;
+  border: 1px solid #d9d9d9;
+  cursor: auto !important;
+  box-shadow: none;
+  border-radius: 4px;
+}
+body main section#form .hubsport__form form fieldset .hs-richtext {
+  text-align: justify;
+}
+body main section#form .hubsport__form form .hs-submit .actions {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+body main section#form .hubsport__form form .hs-submit .actions input {
+  will-change: transform;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 0.3em 0em;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  background: #52ae55;
+  text-shadow: none;
+}
+body main section#list {
+  padding: 2em;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#list {
+    padding: 2em 14em;
+  }
+}
+body main section#list .card {
+  border-radius: 11px;
+  background-color: #ffffff;
+  box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 4em;
+}
+@media only screen and (max-width: 767px) {
+  body main section#list .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.4em;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#list .card {
+    padding: 2em 3em;
+    display: flex;
+  }
+}
+body main section#list .card__detail {
+  display: flex;
+  justify-content: space-between;
+}
+body main section#list .card__detail__intro {
+  align-self: center;
+  text-align: end;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#list .card__detail__intro {
+    text-align: justify;
+    padding-left: 2em;
+  }
+}
+body main section#list .card__detail__intro h3 {
+  margin: 0;
+}
+body main section#list .card__detail__intro span {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 13px;
+}
+body main section#list .card img {
+  border-radius: 50%;
+  z-index: 9;
+  box-shadow: 5px 5px 20px #9e9e9ed6;
+}
+@media only screen and (max-width: 767px) {
+  body main section#list .card img {
+    max-width: 35%;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#list .card img {
+    height: 11em;
+    width: 11em;
+  }
+}
+body main section#list .card__content {
+  margin-bottom: 0;
+  margin-top: 2em;
+  text-align: justify;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#list .card__content {
+    margin-top: 1em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body main section#list .card:last-child {
+    margin-bottom: 0;
+  }
+}
+body main section#bio {
+  text-align: center;
+}
+body main section#bio a img {
+  max-width: 30%;
+}
+@media only screen and (max-width: 767px) {
+  body main section#bio {
+    padding: 2em;
+  }
+  body main section#bio a img {
+    max-width: 50%;
+  }
+  body main section#bio p {
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body main section#bio {
+    padding: 2em 14em;
+  }
+}
+body aside {
+  background-color: #ffffff;
+  box-shadow: 0px 21px 35px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body aside {
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+  body aside section {
+    position: fixed;
+  }
+}
+body aside section#form {
+  padding: 4em 2em;
+  position: fixed;
+}
+body aside section#form .card {
+  width: 100%;
+  height: 200px;
+}
+body aside section#form .card .live__red {
+  display: inline-block;
+  background: red;
+  position: relative;
+  bottom: 0.1em;
+  right: 0.2em;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(204, 44, 44, 0.4);
+  animation: pulse1 1s infinite;
+}
+@keyframes pulse1 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+    box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+body aside section#form .hubsport__form {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 5em 0;
+}
+body aside section#form .hubsport__form h1 {
+  font-size: 30px;
+  margin: 0.7em 0;
+}
+body aside .card {
+  align-self: center;
+  background-color: #232f3d;
+  width: calc(100% - 30px);
+  height: 180px;
+  margin-bottom: -70px;
+  border-radius: 11px;
+  box-shadow: 0px 11px 30px rgba(0, 0, 0, 0.25);
+  padding: 1.5em 1.5em;
+  z-index: 1;
+}
+body aside .card__detail {
+  display: flex;
+  margin-bottom: 0.7em;
+}
+body aside .card__detail__webinar {
+  flex-grow: 1;
+}
+body aside .card__detail__webinar p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.7em;
+  margin-bottom: 0.7em;
+}
+body aside .card__detail__webinar p span {
+  color: red;
+}
+body aside .card__detail__webinar--heading {
+  font-weight: bolder;
+  font-size: 1em !important;
+}
+body aside .card__detail a img {
+  width: 8em;
+  margin-left: 0.7em;
+}
+body aside .card__countdown {
+  height: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body aside .card__countdown p {
+  margin: 0 1.5em;
+  font-size: 0.7em;
+  color: #232f3d;
+}
+@media screen and (max-width: 375px) {
+  body aside .card__countdown p {
+    margin: 0 0.7em;
+  }
+}
+body aside .card__countdown p span {
+  display: block;
+  font-weight: 700;
+  font-size: 2em;
+}
+body aside .hubsport__form {
+  background-color: #ffffff;
+  width: 100%;
+  height: 700px;
+  border-radius: 11px;
+  padding: 5em 2em 0;
+  box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+}
+body aside .hubsport__form h1 {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+body aside .hubsport__form form fieldset {
+  margin: auto !important;
+}
+body aside .hubsport__form form fieldset .hs-form-field label:not(.hs-error-msg) {
+  display: none;
+}
+body aside .hubsport__form form fieldset .hs-form-field ul {
+  display: block !important;
+}
+body aside .hubsport__form form fieldset .hs-form-field ul li label {
+  color: red !important;
+}
+body aside .hubsport__form form fieldset .hs-form-field .input {
+  margin-right: 0;
+}
+body aside .hubsport__form form fieldset .hs-form-field .input .hs-input {
+  display: inline-block;
+  font-size: 14px;
+  padding: 2em 1.5em !important;
+  margin: 0 auto;
+  border: 1px solid #d9d9d9;
+  cursor: auto !important;
+  box-shadow: none;
+  border-radius: 4px;
+}
+body aside .hubsport__form form fieldset .hs-richtext {
+  text-align: justify;
+}
+body aside .hubsport__form form .hs-submit .actions {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+body aside .hubsport__form form .hs-submit .actions input {
+  will-change: transform;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 0.3em 0em;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  background: #52ae55;
+  text-shadow: none;
+}
+@media only screen and (max-width: 2560px) and (min-width: 767px) {
+  body footer {
+    padding: 2em 15em;
+  }
+}
+body footer p {
+  color: #5C5C5C;
+  text-align: center;
+  font-size: 10px;
+}
+
+/*# sourceMappingURL=webinar.css.map */

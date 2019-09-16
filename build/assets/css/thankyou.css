@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  text-align: center;
+  min-height: 100vh;
+}
+body #bg {
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 98%);
+  background-color: #52ae55;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+body header {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 425px) {
+  body header {
+    padding: 1em;
+  }
+}
+body header nav {
+  display: flex;
+  align-items: center;
+}
+body header nav img {
+  width: auto;
+  height: 3rem;
+  filter: invert(1);
+}
+body header nav .line--vertical {
+  border-right: 1px solid #ffffff;
+  height: 48px;
+  margin: 0 1em;
+}
+body header nav h2 {
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+  font-weight: 300;
+}
+body main h1 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 2em;
+}
+body main h1 span {
+  color: white;
+}
+body main .title {
+  margin-bottom: 0.7em;
+}
+body main section:nth-child(2) {
+  margin: 5em 0 1em;
+}
+@media screen and (min-width: 375px) {
+  body main section:nth-child(2) {
+    margin: 3em 0 1em;
+  }
+}
+@media screen and (min-width: 425px) {
+  body main section:nth-child(2) {
+    margin: 3em 0 1em;
+  }
+}
+body main iframe {
+  height: 543px;
+  width: 966px;
+  box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 375px) {
+  body main iframe {
+    height: 180px;
+    width: 330px;
+  }
+}
+@media screen and (min-width: 425px) {
+  body main iframe {
+    height: 210px;
+    width: 370px;
+  }
+}
+@media screen and (min-width: 768px) {
+  body main iframe {
+    height: 270px;
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body main iframe {
+    height: 540px;
+    width: 966px;
+  }
+}
+body main p {
+  font-family: "Quicksand", sans-serif;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+body main a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em 3em;
+  font-family: "Quicksand", sans-serif;
+}
+body footer p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.7em;
+  padding: 1em;
+}
+
+/*# sourceMappingURL=thankyou.css.map */

@@ -1,0 +1,466 @@
+$fontFamily1: 'Nunito', sans-serif;
+$fontFamily2: 'Roboto', sans-serif;
+
+
+$colors: (
+    primary: #52ae55,
+    secondary: #f8f8f8,
+    primary-light: lighten(#52ae55, 40%),
+    primary-darken: darken(#52ae55, 40%),
+    white: #ffffff,
+    red: red,
+    amazon: #232f3d
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$breakpoints: (
+    mobile: 767px,
+    laptop: 1440px,
+    desktop: 2560px
+);
+
+// @mixin laptop {
+//     @media only screen and (max-width: map-get($breakpoints, laptop)) and (min-width: map-get($breakpoints, mobile)) {
+//         @content;
+//     }
+// }
+
+@mixin desktop {
+    @media only screen and (max-width: map-get($breakpoints, desktop)) and (min-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin commonPadding {
+    padding: 2em 15em;
+}
+
+@mixin formAndCard($aside: false) {
+    @if $aside {
+        section#form {
+            padding: 4em 2em;
+            position: fixed;
+            .card {
+                width: 100%;
+                height: 200px;
+                .live__red {
+                    display: inline-block;
+                    background: red;
+                    position: relative;
+                    bottom: .1em;
+                    right: .2em;
+                    height: .5em;
+                    width: .5em;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 rgba(204, 44, 44, 0.4);
+                    animation: pulse1 1s infinite;
+                }
+                @keyframes pulse1 {
+                    0% {
+                        -webkit-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+                        -moz-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+                        box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.57);
+                    }
+                    70% {
+                        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                    }
+                    100% {
+                        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                    }
+                }
+            }
+            .hubsport__form {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 5em 0;
+                h1 {
+                    font-size: 30px;
+                    margin: .7em 0;
+                }
+            }
+        }
+    }
+    .card {
+        align-self: center;
+        background-color: #232f3d;
+        width: calc(100% - 30px);
+        height: 180px;
+        margin-bottom: -70px;
+        border-radius: 11px;
+        box-shadow: 0px 11px 30px rgba(0, 0, 0, 0.25);
+        padding: 1.5em 1.5em;
+        z-index: 1;
+        &__detail {
+            display: flex;
+            margin-bottom: .7em;
+            &__webinar {
+                flex-grow: 1;
+                p {
+                    margin: 0;
+                    color: color(white);
+                    span {
+                        color: color(red)
+                    }
+                    font-size: .7em;
+                    margin-bottom: .7em;
+                }
+                &--heading {
+                    font-weight: bolder;
+                    font-size: 1em !important;
+                }
+            }
+            a img {
+                width: 8em;
+                margin-left: .7em;
+            }
+        }
+        &__countdown {
+            height: 50px;
+            width: 100%;
+            background-color: color(white);
+            // box-shadow: 0px 11px 20px rgba(0, 4, 9, 0.7);
+            border-radius: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                margin: 0 1.5em;
+                font-size: .7em;
+                color: color(amazon);
+                @media screen and (max-width: 375px) {
+                    margin: 0 .7em;
+                }
+                span {
+                    display: block;
+                    font-weight: 700;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+    .hubsport__form {
+        background-color: color(white);
+        width: 100%;
+        height: 700px;
+        border-radius: 11px;
+        padding: 5em 2em 0;
+        box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+        h1 {
+            text-transform: uppercase;
+            font-family: $fontFamily2;
+            font-size: 2em;
+            font-weight: bolder;
+            text-align: center;
+        }
+        form {
+            fieldset {
+                margin: auto !important;
+                .hs-form-field {
+                    label:not(.hs-error-msg) {
+                        display: none;
+                    }
+                    ul {
+                        display: block !important;
+                        li {
+                            label {
+                                color: red !important;
+                            }
+                        }
+                    }
+                    .input {
+                        margin-right: 0;
+                        .hs-input {
+                            display: inline-block;
+                            font-size: 14px;
+                            padding: 2em 1.5em !important;
+                            margin: 0 auto;
+                            border: 1px solid #d9d9d9;
+                            cursor: auto !important;
+                            box-shadow: none;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+                .hs-richtext {
+                    text-align: justify;
+                }
+            }
+            .hs-submit {
+                .actions {
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                    input {
+                        will-change: transform;
+                        color: #fff;
+                        width: 100%;
+                        height: 40px;
+                        padding: .3em 0em;
+                        font-size: 1em;
+                        -webkit-font-smoothing: antialiased;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        font-family: $fontFamily1;
+                        border: none;
+                        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+                        transition: all .3s ease 0s;
+                        cursor: pointer;
+                        outline: none;
+                        background: #52ae55;
+                        text-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: $fontFamily1;
+    background-color: color(secondary);
+    @include desktop() {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        grid-template-rows: 1fr auto;
+    }
+    #bg {
+        clip-path: polygon(0 0, 100% 0, 100% 55%, 0 98%);
+        background-color: #52ae55;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        @include desktop() {
+            height: calc(100% - 7em);
+        }
+    }
+    header {
+        @include mobile {
+            height: 5em;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            background-color: transparent;
+        }
+        @include desktop {
+            padding: 2em 14em;
+            grid-column: 1;
+        }
+        img {
+            max-width: 100%;
+            @include mobile {
+                max-width: 40%;
+                filter: none;
+            }
+            @include desktop {
+                max-width: 20%;
+            }
+        }
+        .toggle--language {
+            position: relative;
+            input {
+                display: none;
+            }
+            .slider {
+                position: absolute;
+            }
+        }
+    }
+    main {
+        @include mobile {
+            background-color: transparent;
+            padding: 0;
+        }
+        section#content {
+            display: flex;
+            img {
+                box-shadow: 0px 21px 35px rgba(0, 0, 0, 0.3);
+                border-radius: 11px;
+            }
+            @include mobile {
+                flex-direction: column;
+                padding: 1em 2em;
+                img {
+                    align-self: center;
+                    max-width: 100%;
+                }
+            }
+            @include desktop() {
+                padding: 2em 14em;
+                justify-content: space-between;
+                img {
+                    width: 40%;
+                    align-self: flex-start;
+                }
+            }
+            .content__detail {
+                @include desktop() {
+                    width: 55%;
+                }
+                &__title {
+                    @include mobile() {
+                        margin-top: 40px;
+                        font-size: 40px;
+                        font-family: $fontFamily2;
+                        font-weight: 900;
+                        line-height: 40px;
+                        text-align: center;
+                    }
+                    @include desktop() {
+                        margin-top: 0;
+                        font-size: 40px;
+                        font-family: $fontFamily2;
+                    }
+                }
+                &__para {
+                    font-family: $fontFamily1;
+                    font-size: 1.1rem;
+                    line-height: 150%;
+                    text-align: justify;
+                }
+                ul li {
+                    text-align: justify;
+                }
+            }
+            &__detail {
+                background-color: color(primary-light);
+                h1 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 2em;
+                    text-align: center;
+                }
+            }
+        }
+        section#form {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            @include formAndCard();
+        }
+        section#list {
+            padding: 2em;
+            @include desktop() {
+                padding: 2em 14em;
+            }
+            .card {
+                border-radius: 11px;
+                background-color: color(white);
+                box-shadow: 0px 21px 30px rgba(0, 0, 0, 0.25);
+                margin-bottom: 4em;
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1.4em;
+                }
+                @include desktop() {
+                    padding: 2em 3em;
+                    display: flex;
+                }
+                &__detail {
+                    display: flex;
+                    justify-content: space-between;
+                    &__intro {
+                        align-self: center;
+                        text-align: end;
+                        @include desktop() {
+                            text-align: justify;
+                            padding-left: 2em;
+                        }
+                        h3 {
+                            margin: 0;
+                        }
+                        span {
+                            color: rgba(0,0,0,0.54);
+                            font-size: 13px;
+                        }
+                    }
+                }
+                img {
+                    border-radius: 50%;
+                    z-index: 9;
+                    box-shadow: 5px 5px 20px #9e9e9ed6;
+                    @include mobile {
+                        max-width: 35%;
+                    }
+                    @include desktop() {
+                        height: 11em;
+                        width: 11em;
+                    }
+                }
+                &__content {
+                    margin-bottom: 0;
+                    margin-top: 2em;
+                    text-align: justify;
+                    @include desktop() {
+                        margin-top: 1em;
+                    }
+                }
+            }
+            @include mobile() {
+                .card:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        section#bio {
+            text-align: center;
+            a img {
+                max-width: 30%;
+            }
+            @include mobile() {
+                padding: 2em;
+                a img {
+                    max-width: 50%;
+                }
+                p {
+                    text-align: justify;
+                }
+            }
+            @include desktop() {
+                padding: 2em 14em;
+            }
+        }
+    }
+    aside {
+        background-color: color(white);
+        box-shadow: 0px 21px 35px rgba(0, 0, 0, 0.3);
+        @include desktop {
+            grid-column: 2;
+            grid-row: 1 / 4;
+            section {
+                position: fixed;
+            }
+        }
+        @include formAndCard($aside: true);
+    }
+    footer {
+        @include desktop {
+            @include commonPadding;
+        }
+        p {
+            color: #5C5C5C;
+            text-align: center;
+            font-size: 10px;
+        }
+    }
+}
