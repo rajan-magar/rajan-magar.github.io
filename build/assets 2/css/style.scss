@@ -655,6 +655,7 @@
 #viu,
 #treebo,
 #tiketCom,
+#oyo,
 #nostragamus {
 	#sec01 {
 		background: url("../img/berrybenka-case-study-hero.png");
@@ -758,6 +759,20 @@
 		padding-bottom: 7em !important;
 		.casestudy-hero-logo {
 			margin: initial;
+		}
+	}
+}
+
+#oyo {
+	#sec01 {
+		background: linear-gradient(180deg, rgba(251, 253, 253, 0.72), rgba(251, 253, 253, 0.63)), url("../img/oyo-case-study.png");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding-bottom: 7em !important;
+		.casestudy-hero-logo {
+			margin: initial;
+			background: #fafdfd;
 		}
 	}
 }
